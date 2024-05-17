@@ -5,7 +5,8 @@ public class JenkinsTest
     @Test
     public void testJenkin()
     {
-        System.out.println("JIO");
+        String url=System.getProperty("url");
+        System.out.println(url);
         System.out.println("dfghj");
         System.out.println("hello");
     }
