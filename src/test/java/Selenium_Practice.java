@@ -69,6 +69,5 @@ public class Selenium_Practice
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.booking.com/city/in/calcutta");
-
     }
 }

@@ -15,7 +15,7 @@ public class EnumsTest
 
     public void testSwitch()
     {
-        status state=status.C;
+        status state=status.A;
         switch (state)
         {
             case A :

@@ -33,8 +33,10 @@ public class ArrayRotate
         }
     }
 
-    public class ArraySwap {
-        public static void main(String[] args) {
+    public class ArraySwap
+    {
+        public static void main(String[] args)
+        {
             int[] arr1 = {1, 2, 3, 4, 5};
             int[] arr2 = {6, 7, 8, 9, 10};
 
@@ -51,18 +53,22 @@ public class ArrayRotate
         }
 
         // Method to swap elements of two arrays
-        public static void swapArrays(int[] arr1, int[] arr2) {
-            if (arr1.length != arr2.length) {
+        public static void swapArrays(int[] arr1, int[] arr2)
+        {
+            if (arr1.length != arr2.length)
+            {
                 throw new IllegalArgumentException("Arrays must have the same length");
             }
 
-            for (int i = 0; i < arr1.length; i++) {
+            for (int i = 0; i < arr1.length; i++)
+            {
                 int temp = arr1[i];
                 arr1[i] = arr2[i];
                 arr2[i] = temp;
             }
         }
     }
+
     @Test
     public void swaping2Arrays()
     {
@@ -113,5 +119,29 @@ public class ArrayRotate
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    @Test
+    public void testMerging2Array()
+    {
+        int a[] = {1, 2, 3};
+        int b[] = {4, 5, 6};
+        int c[] = new int[a.length + b.length];
+        int j = 0;
+        for (int i = 0; i < c.length; i++) //0-5
+        {
+            if (i < a.length)
+            {
+                c[i] = a[i];
+            } else //3-5
+            {
+                c[i] = b[j];
+                j++;
+            }
+        }
+        for (int i = 0; i < c.length; i++)
+        {
+            System.out.println(c[i]);
+        }
     }
 }

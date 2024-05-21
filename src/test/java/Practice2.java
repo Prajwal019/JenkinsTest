@@ -77,19 +77,15 @@ public class Practice2
     @Test
     public void anagram()
     {
-        String s1 = "life";
-        String s2 = "ffile";
+        String s1 = "they see";
+        String s2 = "the eyes";
         if (s1.length() == s2.length())
         {
-            int count = 0;
-            int length = s1.length();
             char ch1[] = s1.toCharArray();
             char[] ch2 = s2.toCharArray();
             Arrays.sort(ch2);
             Arrays.sort(ch1);
-            s1 = String.valueOf(ch1);
-            s2 = String.valueOf(ch2);
-            if (s1.equals(s2))
+            if (Arrays.equals(ch1, ch2))
             {
                 System.out.println("The given words are anagram");
             } else
@@ -100,29 +96,6 @@ public class Practice2
         {
             System.out.println("Not an anagram");
         }
-
-//        if (s1.length() == s2.length())
-//        {
-//            for (int i = 0; i < s1.length(); i++)
-//            {
-//                    if (ch1[i] == ch2[i])
-//                    {
-//                        count++;
-//                    }
-//
-//            }
-//            if (count == length)
-//            {
-//                System.out.println("The given words are anagram");
-//            } else
-//            {
-//                System.out.println("Not an anagram");
-//            }
-//        } else
-//        {
-//            System.out.println("Not an anagram");
-//
-//        }
     }
 
     @Test
@@ -481,9 +454,9 @@ public class Practice2
     {
         String s = "a3b4c5";
         String output = "";
+        char ch[] = s.toCharArray();
         for (int i = 0; i < s.length(); i = i + 2)
         {
-            char ch[] = s.toCharArray();
             int count = ch[i + 1] - '0';
             for (int j = 0; j < count; j++)
             {
@@ -491,5 +464,22 @@ public class Practice2
             }
         }
         System.out.println(output);
+    }
+
+    @Test
+    public void sumOfNumbersInGivenString()
+    {
+        String s="fg2jj3kl5khj6";
+        char ch[]=s.toCharArray();
+        int sum=0;
+        for (int i=0;i<ch.length;i++)
+        {
+            if (ch[i]>='0'&& ch[i]<='9')
+            {
+                System.out.println(ch[i]);
+                sum=sum+ch[i]-48;
+            }
+        }
+        System.out.println(sum);
     }
 }

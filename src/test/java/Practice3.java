@@ -572,25 +572,24 @@ public class Practice3
     @Test
     public void testForBrokenLinks()
     {
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
         List<WebElement> allLinks = driver.findElements(By.xpath("//a"));
-        ArrayList ls=new ArrayList();
-        for (int i=0;i<allLinks.size();i++)
+        ArrayList ls = new ArrayList();
+        for (int i = 0; i < allLinks.size(); i++)
         {
-            URL url=null;
-            int statusCode=0;
+            URL url = null;
+            int statusCode = 0;
             String eachLink = allLinks.get(i).getAttribute("href");
             try
             {
-                url=new URL(eachLink);
-                HttpURLConnection con=(HttpURLConnection)url.openConnection();
+                url = new URL(eachLink);
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
 
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
 
             }
@@ -599,26 +598,26 @@ public class Practice3
     }
 
     @Test
-    public  void reverseArrayFromRequiredIndex()
+    public void reverseArrayFromRequiredIndex()
     {
-        int a[]={1,2,3,4,5,6,7,8,9};
-        int start=2;
-        int end=a.length-1;
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int start = 2;
+        int end = a.length - 1;
         System.out.println("Before reversing");
-        for (int i=0;i<a.length;i++)
+        for (int i = 0; i < a.length; i++)
         {
             System.out.println(a[i]);
         }
-        while (start<end)
+        while (start < end)
         {
-            int temp=a[start];
-            a[start]=a[end];
-            a[end]=temp;
+            int temp = a[start];
+            a[start] = a[end];
+            a[end] = temp;
             start++;
             end--;
         }
         System.out.println("After reversing");
-        for (int i=0;i<a.length;i++)
+        for (int i = 0; i < a.length; i++)
         {
             System.out.println(a[i]);
         }
@@ -635,13 +634,30 @@ public class Practice3
         System.out.println("str1 = " + str1);
         System.out.println("str2 = " + str2);
 
-        str1=str1+str2;
-        str2=str1.substring(0,str1.length()-str2.length());
-        str1=str1.substring(str2.length());
+        str1 = str1 + str2;
+        str2 = str1.substring(0, str1.length() - str2.length());
+        str1 = str1.substring(str2.length());
 
         System.out.println("After swapping:");
         System.out.println("str1 = " + str1);
         System.out.println("str2 = " + str2);
     }
 
+    @Test
+    public void testConsecutiveAlpha()
+    {
+        String s = "a3b2c1P4";
+        char ch[] = s.toCharArray();
+        String output = "";
+        for (int i = 0; i < s.length(); i = i + 2)
+        {
+            int count = ch[i + 1] - '0';
+            for (int j = 0; j < count; j++)
+            {
+                output = output + ch[i];
+            }
+        }
+        System.out.println(output);
+
+    }
 }

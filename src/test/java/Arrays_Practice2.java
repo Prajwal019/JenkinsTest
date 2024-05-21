@@ -8,17 +8,19 @@ public class Arrays_Practice2
     public void merging2Array()
     {
         int [] a={1,2,3};
-        int [] b={4,5,6};
+        int [] b={4,5,6,7};
         int c[]=new int[a.length+b.length];
         for (int i=0;i<a.length;i++)
         {
             c[i]=a[i];
-            System.out.println(c[i]);
         }
         for (int j=0;j<b.length;j++)
         {
             c[j]=b[j];
-            System.out.println(c[j]);
+        }
+        for (int k=0;k<c.length;k++)
+        {
+            System.out.println(c[k]);
         }
     }
     @Test
@@ -47,7 +49,6 @@ public class Arrays_Practice2
                 startIndex++;
                 endIndex--;
             }
-
             // Printing the reversed array
             for (int num : array) {
                 System.out.print(num + " ");
